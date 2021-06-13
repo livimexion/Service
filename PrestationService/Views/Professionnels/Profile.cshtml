@@ -1,0 +1,67 @@
+﻿@model PrestationService.Models.Professionnel
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Home_layout.cshtml";
+}
+
+
+<section class="blog_area single-post-area p_120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 posts-list">
+                
+
+                    <div class="comment-form">
+                        <h4>Offrez un service</h4>
+                        <form>
+                            <div class="form-group form-inline">
+                                <div class="form-group col-lg-6 col-md-6 name">
+                                    <input type="text" class="form-control" id="nom" placeholder="Enter nom" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter nom'">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="sousCat" placeholder="categorie" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Categorie'">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control mb-10" rows="5" name="description" placeholder="description" onfocus="this.placeholder = ''" onblur="this.placeholder = 'description'" required=""></textarea>
+                            </div>
+                            <div class="form-group form-inline">
+                                <div class="form-group col-lg-6 col-md-6 name">
+                                    <input type="text" class="form-control" id="prix" placeholder="Enter Prix" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Prix'">
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 name">
+                                    <input type="text" class="form-control" id="nbheure" placeholder="Enter nombre d'heure" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter nombre d heure'">
+                                </div>
+                            </div>
+                            <a href="#" class="primary-btn submit_btn">Post Service</a>
+                        </form>
+                    </div>
+
+               
+
+               
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget author_widget">
+                        <img class="author_img rounded-circle" src="~/occupy/img/team/foto2.jpeg" style="width:120px; height:120px" alt="">
+                        <h4> @ViewData["NomComplet"]</h4>
+                        <p>@ViewData["Specialite"]</p>
+                        <p>@ViewData["mail"]</p>
+                        <div class="social_icon">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-github"></i></a>
+                            <a href="#"><i class="fa fa-behance"></i></a>
+                        </div>
+                       
+                        <div class="br"></div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

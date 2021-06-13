@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Indexkkk";
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+
+<h2>Indexkkk</h2>
+
+< fieldset >
+    < legend > Profile < /legend>
+
+@if (Session["UserName"] != null)
+{
+<p> Welcome @Session["UserName"].ToString()</p> 
+ } < /fieldset> 

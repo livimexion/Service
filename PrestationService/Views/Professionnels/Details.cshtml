@@ -1,0 +1,68 @@
+﻿@model PrestationService.Models.Professionnel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Professionnel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        @*@if (Model.Files.Any(f => f.FileType == FileType.Avatar)) {
+        < dt >
+        Avatar
+        </ dt >
+        < dd >
+        < img src = "~/Files?id=@Model.Files.First(f => f.FileType == FileType.Avatar).FileId" alt = "avatar" />
+        </ dd >
+        }*@
+        <dt>
+            @Html.DisplayNameFor(model => model.adresse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adresse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diplome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diplome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.specialite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.specialite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ninea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ninea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.registre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.registre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdProfessionnel }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

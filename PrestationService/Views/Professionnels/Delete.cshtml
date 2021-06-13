@@ -1,0 +1,171 @@
+﻿@model PrestationService.Models.Professionnel
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_admin_layout.cshtml";
+}
+
+
+    <div class="single-product-tab-area mg-b-30">
+        <!-- Single pro tab review Start-->
+        <div class="single-pro-review-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="review-tab-pro-inner">
+                            <ul id="myTab3" class="tab-review-design">
+                                <li class="active"><a href="#description"><i class="icon nalika-edit" aria-hidden="true"></i> Supprimer Professionnel</a></li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content custom-product-edit">
+
+                                <div class="product-tab-list tab-pane fade active in" id="description">
+                                    <div class="row"  style="background-color:lightsteelblue">
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="review-content-section">
+                                                <dl class="dl-horizontal">
+                                                    <dd>
+                                                        @Html.HiddenFor(model => model.IdProfessionnel)
+                                                    </dd>
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.nom)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.nom)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.prenom)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.prenom)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.naissance)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.naissance)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.adresse)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.adresse)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.mail)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.mail)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.tel)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.tel)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.identification)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.identification)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.diplome)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.diplome)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.specialite)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.specialite)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.ninea)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.ninea)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.registre)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.registre)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.statut)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.statut)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.experience)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.experience)
+                                                    </dd>
+
+                                                    <dt>
+                                                        @Html.DisplayNameFor(model => model.photo)
+                                                    </dt>
+
+                                                    <dd>
+                                                        @Html.DisplayFor(model => model.photo)
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                            <div class="text-center custom-pro-edt-ds">
+                                                @using (Html.BeginForm())
+                                                {
+                                                    @Html.AntiForgeryToken()
+
+                                                    <div class="form-actions no-color">
+                                                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                                                        @Html.ActionLink("Back to List", "Index")
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

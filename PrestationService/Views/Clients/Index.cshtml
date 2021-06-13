@@ -1,0 +1,98 @@
+﻿
+@model PagedList.IPagedList<PrestationService.Models.Client>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet"type="text/css"/>
+
+@{
+    ViewBag.Title = "clients";
+    Layout = "~/Views/Shared/_admin_layout.cshtml";
+}
+
+<div class="product-status mg-b-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                <div class="product-status-wrap" style="background-color:lightsteelblue">
+                    <h4>Liste Clients</h4>
+                    <div class="add-product">
+                        @Html.ActionLink("Create New", "Create")
+
+                        @using (Html.BeginForm("Index", "Clients", FormMethod.Get))
+                        {
+                            <p>
+                                @Html.TextBox("SearchString", ViewBag.CurrentFilter as string) <br />
+                                <input type="submit" value="Search" class="btn btn-info" />
+                            </p>
+                        }
+                    </div>
+                    <div class="table-responsive-lg ">
+                        <table>
+                            <tr>
+                                <th>
+                                    @Html.ActionLink("Nom", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                                </th>
+                                <th>
+                                    @Html.ActionLink("Prenom", "Index", new { sortOrder = ViewBag.LastSortParm, currentFilter = ViewBag.CurrentFilter })
+                                </th>
+                               
+                                <th>
+                                        Naissance
+                                </th>
+                                <th>
+                                        Adresse
+                                </th>
+                                <th>
+                                        Email
+                                </th>
+                                <th>
+                                        Telephone
+                                </th>
+                                <th>
+                                        Identification
+                                </th>
+                                <th>Setting</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.nom)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.prenom)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.naissance)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.adresse)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.mail)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.tel)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.identification)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.IdClient }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.IdClient }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.IdClient })
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                        <br />
+                        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

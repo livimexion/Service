@@ -1,0 +1,67 @@
+﻿@model PrestationService.Models.Carte
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Home_layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Carte</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.typPay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.typPay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acompte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acompte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.typeCarte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.typeCarte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numeroCarte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeroCarte)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numeroCsv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numeroCsv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.expiration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.expiration)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPay }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

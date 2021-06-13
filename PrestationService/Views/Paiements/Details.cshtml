@@ -1,0 +1,35 @@
+﻿@model PrestationService.Models.Paiement
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Home_layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Paiement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.typPay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.typPay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acompte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acompte)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idPay }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

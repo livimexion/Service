@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PrestationService.Models.Professionnel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diplome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.specialite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ninea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.registre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.adresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diplome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.specialite)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ninea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.registre)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdProfessionnel }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdProfessionnel }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdProfessionnel })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mon application ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container body-content">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #0094ff;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @Html.ActionLink("XARMAT", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        @Html.ActionLink("Accueil", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item active">
+                        @Html.ActionLink("Utilisateur", "Create", "Utilisateurs", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item active">
+                        @Html.ActionLink("Inscription", "RegisterClient", "Utilisateurs", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Administration", "Accueil", "Administration", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("À propos de", "About", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("telecharger", "Upload", "Documents", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav  navbar-right">
+                    <li class="nav-item lnr lnr-user">
+                        @Html.ActionLink("Profile", "ProfilClient", "Utilisateurs")
+                    </li>
+                </ul>
+                
+                @Html.Partial("_LoginPartial")
+               
+            </div>
+        </nav>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

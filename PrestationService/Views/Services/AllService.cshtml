@@ -1,0 +1,87 @@
+﻿@model IEnumerable<PrestationService.Models.Service>
+
+@{
+    ViewBag.Title = "AllService";
+    Layout = "~/Views/Shared/_Home_layout.cshtml";
+}
+
+
+
+
+<section>
+    <head>
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,700'>
+        <link rel="stylesheet" href="~/dist/style.css">
+    </head>
+
+    <!-- partial:index.partial.html -->
+    <article class="col-md-12">
+        <!-- PRODUCT CARDS -->
+        <h3>Service</h3>
+        <div class="cards-8 section-gray">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <button id="loginModal" type="button"
+                                class="btn btn-sm btn-default pull-left col-lg-11 button button4">
+                            @Html.ActionLink("New Service", "NewService")
+                        </button>
+
+                    </div>
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-3">
+                            <div class="card card-product">
+
+                                <div class="table">
+                                    <h6 class="category text-muted">@item.SousCategorie.libSouCat</h6>
+                                    <h4 class="card-caption">
+                                        <a href="#">@item.libelle</a>
+                                    </h4>
+                                    <div class="card-description">@item.description </div>
+                                    <div class="adn-left">
+                                        <h4>@item.nbHeure<span>H</span></h4>
+                                    </div>
+                                    <div class="ftr">
+                                        <div class="price">
+                                            <h4>@item.prix</h4>
+                                        </div>
+                                        <hr />
+                                        <div class="author">
+                                            <h4>@item.id</h4>
+                                            @*<a href="#">
+                                                    <img src="http://adamthemes.com/demo/code/cards/images/avatar3.png" alt="" class="avatar img-raised"> <span></span>
+                                                    <div class="ripple-cont">
+                                                        <div class="ripple ripple-on ripple-out" style="left: 574px; top: 364px; background-color: rgb(60, 72, 88); transform: scale(11.875);"></div>
+                                                    </div>
+                                                </a>*@
+                                        </div>
+                                        <div class="stats">
+                                            @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@item.idService">@Html.ActionLink("Prestater", "Prestater", "Prestations")</button>*@
+                                            <button id="prestaModal" type="button"
+                                                    class="btn btn-sm btn-default pull-left col-lg-11 button button4">
+                                                @Html.ActionLink("Prestater", "Prestater","Prestations")
+                                            </button>
+                                            @*<button type="button" class="btn btn-just-icon btn-simple btn-warning">Prestater </button>*@
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </article>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+
+</section>

@@ -1,0 +1,270 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Home_Layout.cshtml";
+
+}
+
+
+
+
+    <!--================Home Banner Area =================-->
+    <section class="home_banner_area">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" data-swiper-autoplay="4000">
+                    <img src="/occupy/img/slider/slider-1.jpg" alt="">
+                    <div class="slider_text_inner">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div class="slider_text">
+                                        <h2>Nous offrons des <br />Prestations</h2>
+                                        <p>Choisez un service adapter a ces besoins.</p>
+                                        <a class="banner_btn" href="#">Explore Us</a>
+                                        <a class="banner_btn2" href="#">Get Free Quote</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide"  data-swiper-autoplay="4000">
+                    <img src="~/occupy/img/slider/slider-2.jpg" alt="">
+                    <div class="slider_text_inner">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div class="slider_text">
+                                        <h2>Nous offrons du <br />Sur Mesure</h2>
+                                        <p>Faites une demande Devis</p>
+                                        <a class="banner_btn" href="#">Explore Us</a>
+                                        <a class="banner_btn2" href="#">Get Free Quote</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide"  data-swiper-autoplay="4000">
+                    <img src="~/occupy/img/banner/home-banner.jpg" style="height:780px" alt="">
+                    <div class="slider_text_inner">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-7">
+                                    <div class="slider_text">
+                                        <h2>Nous Garanissons <br />la Qualite du Service</h2>
+                                        <p>Les Meuilleurs professionnels pour un service garanti</p>
+                                        <a class="banner_btn" href="#">Explore Us</a>
+                                        <a class="banner_btn2" href="#">Get Free Quote</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+  
+    <!--================Success Area =================-->
+    <section class="success_area">
+        <div class="row m0 right_dir">
+            <div class="col-lg-6 p1">
+                <div class="success_img">
+                    <img src="~/occupy/img/relation2.jpg" style="height:500px; width:690px" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 p0">
+                <div class="mission_text">
+                    <h4>Solution</h4>
+                    <p>XARMAT intervient dans le domaine de la prestation de service à domicile. D’où son rôle dans la gestion des rapporte de travail entre particulier et professionnel, de la gestion de la qualité du service rendu, la fidélisation de sa clientèle.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row m0">
+            <div class="col-lg-6 p0">
+                <div class="mission_text">
+                    <h4>Mission</h4>
+                    <p>XARMAT permettre à tous professionnels de s’ouvrir au monde extérieur et ainsi les accompagner à leur expansion. Mais aussi de permettre aux particuliers d’avoir à leur disposition un carnet d’adresse qui leurs permettra d’avoir plus de possibilité sur le choix du professionnel.  </p>
+                </div>
+            </div>
+            <div class="col-lg-6 p0">
+                <div class="success_img">
+                    <img src="~/occupy/img/relation.jpg" style="height:500px; width:690px" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row m0 right_dir">
+            <div class="col-lg-6 p2">
+                <div class="success_img">
+                    <img src="~/occupy/img/realation1.jpg" style="height:500px; width:690px" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 p0">
+                <div class="mission_text">
+                    <h4>Success</h4>
+                    <p>XARMAT fait le bonheur de ses clients en leurs proposant des solutions efficaces et parfaitement adaptés à leur besoin. XARMAT de met en relation les professionnels et les particuliers pour une collaboration fiables et de qualité lors de la realisation de projets. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Success Area =================-->
+    <!--================Project Area =================-->
+    <section class="project_area">
+        <div class="row m0">
+            <div class="col-lg-4 col-md-6 p0">
+                <div class="project_item"  >
+                    <img src="~/occupy/img/project/bricolage.jpg" style="width:540.37px; height:340px" alt="">
+                    <div class="hover_text">
+                        <h4>Bricolage</h4>
+
+                         @Html.ActionLink("Voir", "Bricolage", "Home", new { area = "" }, new { @class = "main_btn" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 p0">
+                <div class="project_item">
+                    <img src="~/occupy/img/project/informatique.jpg" style="width:540.37px; height:340px" alt="">
+                    <div class="hover_text">
+                        <h4>Informatique</h4>
+                        @Html.ActionLink("Voir", "Informatique", "Home", new { area = "" }, new { @class = "main_btn" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 p0">
+                <div class="project_item">
+                    <img src="~/occupy/img/project/mecanique.jpg" style="width:540.37px; height:340px" alt="">
+                    <div class="hover_text">
+                        <h4>Mecanique</h4>
+                        @Html.ActionLink("Voir", "Mecanique", "Home", new { area = "" }, new { @class = "main_btn" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 p0">
+                <div class="project_item">
+                    <img src="~/occupy/img/project/medecine.jpg" style="width:540.37px; height:340px" alt="">
+                    <div class="hover_text">
+                        <h4>Medecine</h4>
+                        @Html.ActionLink("Voir", "Medecine", "Home", new { area = "" }, new { @class = "main_btn" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 p0">
+                <div class="project_item">
+                    <img src="~/occupy/img/project/menage.jpg" style="width:540.37px; height:340px" alt="">
+                    <div class="hover_text">
+                        <h4>Tache Menagere</h4>
+                        @Html.ActionLink("Voir", "Menage", "Home", new { area = "" }, new { @class = "main_btn" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 p0">
+                <div class="project_item">
+                    <img src="~/occupy/img/project/menuiserie.jpg" style="width:540.37px; height:340px" alt="">
+                    <div class="hover_text">
+                        <h4>Menuiserie</h4>
+                        @Html.ActionLink("Voir", "Menuiserie", "Home", new { area = "" }, new { @class = "main_btn" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 p0">
+                <div class="project_item">
+                    <img src="~/occupy/img/project/voyage.jpg" style="width:540.37px; height:340px" alt="">
+                    <div class="hover_text">
+                        <h4>Voyage</h4>
+                        @Html.ActionLink("Voir", "Voyage", "Home", new { area = "" }, new { @class = "main_btn" })
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 p0">
+                <div class="project_item">
+                    <img src="~/occupy/img/project/evenementiel.jpg" style="width:540.37px; height:340px" alt="">
+                    <div class="hover_text">
+                        <h4>Evenementiel</h4>
+                        @Html.ActionLink("Voir", "Evenementiel", "Home", new { area = "" }, new { @class = "main_btn" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Project Area =================-->
+    <!--================Team Area =================-->
+    <section class="team_area">
+        <div class="team_slider owl-carousel">
+            <div class="item">
+                <div class="team_item">
+                    <img src="~/occupy/img/team/foto1.jpeg" style="width:375px" alt="">
+                    <div class="hover_text">
+                        <a href="#"><h4>Glenn Watson</h4></a>
+                        <p>Managing Director (Sales)</p>
+                        <ul class="list">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="team_item">
+                    <img src="~/occupy/img/team/foto2.jpeg"  style="width:375px" alt="">
+                    <div class="hover_text">
+                        <a href="#"><h4>Eva Yates</h4></a>
+                        <p>Managing Director (Sales)</p>
+                        <ul class="list">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="team_item">
+                    <img src="~/occupy/img/team/foto3.jpeg"  style="width:375px" alt="">
+                    <div class="hover_text">
+                        <a href="#"><h4>Ethan Hopkins</h4></a>
+                        <p>Managing Director (Sales)</p>
+                        <ul class="list">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="team_item">
+                    <img src="~/occupy/img/team/foto4.jpeg"  style="width:375px" alt="">
+                    <div class="hover_text">
+                        <a href="#"><h4>Maud Graham</h4></a>
+                        <p>Managing Director (Sales)</p>
+                        <ul class="list">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Team Area =================-->
+    <!--================Project Details Area =================-->
+    <section class="project_know_area p_120">
+        <div class="container">
+            <div class="project_know_inner text-center">
+                <h3>Get to Know Project Estimate?</h3>
+                <p>There is a moment in the life of any aspiring astronomer that it is time to buy that first telescope. It’s exciting to think about setting up your own viewing station whether that is on the deck</p>
+                <a class="white_btn" href="#">Get Free Estimate</a>
+            </div>
+        </div>
+    </section>
+    <!--================End Project Details Area =================-->
+   
+   

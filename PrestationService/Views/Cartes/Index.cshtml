@@ -1,0 +1,64 @@
+﻿@model IEnumerable<PrestationService.Models.Carte>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Home_layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.typPay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.acompte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.typeCarte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numeroCarte)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numeroCsv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.expiration)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.typPay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.acompte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.typeCarte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numeroCarte)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numeroCsv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.expiration)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idPay }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idPay }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idPay })
+        </td>
+    </tr>
+}
+
+</table>

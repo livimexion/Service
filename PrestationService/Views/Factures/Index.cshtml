@@ -1,0 +1,70 @@
+﻿@model IEnumerable<PrestationService.Models.Facture>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Prestation.adresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateFacture)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.montantHT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.montantTTC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.etat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.avance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prestation.adresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateFacture)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.montantHT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.montantTTC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.etat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.avance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idFacture }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idFacture }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idFacture })
+        </td>
+    </tr>
+}
+
+</table>

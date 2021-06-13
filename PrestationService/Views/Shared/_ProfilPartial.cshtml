@@ -1,0 +1,52 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav  navbar-right">
+            <li class="nav-item submenu dropdown lnr lnr-user">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="nav-item">@Html.ActionLink("Profile", "ProfilClient", "Utilisateurs", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Parametre", "Index", "Manage", new { area = "" }, new { title = "Manage" })</li>
+                    <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()">déconnecter</a></li>
+                </ul>
+            </li>
+            
+        </ul>
+
+
+
+        @*<li class="nav-item submenu dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+               Profile
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                    <li class="nav-item">
+                        <a>
+                            @Html.ActionLink("Profile", "ProfilClient", "Utilisateurs", new { area = "" }, new { @class = "nav-link" })
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Menage", "Menage", "Home", new { area = "" }, new { @class = "nav-link" })
+                    <li class="nav-item"><a class="nav-link" href="portfolio-details.html">Portfolio Details</a>
+                    <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+                </ul>
+            </li>*@
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+
+        <li class="nav-item">
+            @Html.ActionLink("Se connecter", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </li>
+    </ul>
+
+}

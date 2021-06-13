@@ -1,0 +1,18 @@
+﻿
+@model PrestationService.Models.Service
+
+@{
+    ViewBag.Title = "Service";
+    Layout = "~/Views/Shared/_admin_layout.cshtml";
+}
+
+<h2>Service</h2>
+
+<div>
+
+    @{
+
+        Html.RenderPartial("~/Views/Services/Index.cshtml");
+    }
+
+</div>

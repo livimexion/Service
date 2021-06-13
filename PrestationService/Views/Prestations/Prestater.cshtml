@@ -1,0 +1,194 @@
+﻿@model PrestationService.Models.Prestation
+
+@{
+    ViewBag.Title = "Prestater";
+    Layout = "~/Views/Shared/_Home_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NewService</title>
+</head>
+<body>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            border-radius: 2px;
+        }
+
+        .button2 {
+            border-radius: 4px;
+        }
+
+        .button3 {
+            border-radius: 8px;
+        }
+
+        .button4 {
+            border-radius: 12px;
+        }
+
+        .button5 {
+            border-radius: 50%;
+        }
+    </style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+
+                @using (Html.BeginForm("NewService", "Services", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="modal fade" tabindex="-1" id="prestaModal"
+                         data-keyboard="false" data-backdrop="static">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                 
+
+                                </div>
+
+                                <div class="modal-body">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                    <div class="form-group">
+                                        <div>
+                                            @Html.EditorFor(model => model.adresse, new { htmlAttributes = new { @class = "form-control", placeholder = "Adresse" } })
+                                            @Html.ValidationMessageFor(model => model.adresse, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div>
+                                            @Html.EditorFor(model => model.date, new { htmlAttributes = new { @class = "form-control", placeholder = "Date" } })
+                                            @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @*@Html.HiddenFor(model => model.id)*@
+                                        @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control", placeholder = "Client" } })
+                                        @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.idService, new { htmlAttributes = new { @class = "form-control", placeholder = "Service" } })
+                                        @Html.ValidationMessageFor(model => model.idService, "", new { @class = "text-danger" })
+                                    </div>
+                                   
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary button button4">Save</button>
+                                    <button type="button" id="btnHideModal" class="btn btn-primary button button4">
+                                        Hide
+                                    </button>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+
+    </script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //$("#btnShowModal").click(function () {
+            $("#prestaModal").modal('show');
+            //});
+
+            $("#btnHideModal").click(function () {
+                $("#prestaModal").modal('hide');
+            });
+        });
+    </script>
+</body>
+</html>
+
+@*<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                    <form>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.HiddenFor(model => model.idPrestation)
+
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.adresse, new { htmlAttributes = new { @class = "form-control", placeholder = "Adresse" } })
+                            @Html.ValidationMessageFor(model => model.adresse, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.date, new { htmlAttributes = new { @class = "form-control", placeholder = "Date" } })
+                            @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.id, new { htmlAttributes = new { @class = "form-control", placeholder = "Client" } })
+                            @Html.ValidationMessageFor(model => model.id, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.idService, new { htmlAttributes = new { @class = "form-control", placeholder = "Service" } })
+                            @Html.ValidationMessageFor(model => model.idService, "", new { @class = "text-danger" })
+                        </div>
+
+                    </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                            <button type="submit" class="btn btn-primary">Valider</button>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var recipient = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + recipient)
+            modal.find('.modal-body input').val(recipient)
+        });
+    </scrip*@t>

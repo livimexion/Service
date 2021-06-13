@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Menage";
+    Layout = "~/Views/Shared/_Home_layout.cshtml";
+}
+
+<section class="banner_area" style="background-image:url(/occupy/img/project/menage.jpg)">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+            <div class="banner_content">
+                <h2>Projects</h2>
+                <div class="page_link">
+                    @Html.ActionLink("Accueil", "Home", "Home", new { area = "" }, new { @class = "nav-link" })
+                    @Html.ActionLink("Menage", "Menage", "Home", new { area = "" }, new { @class = "nav-link" })
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Home Banner Area =================-->
+
+<section class="success_area">
+    <div class="row m0 right_dir">
+        <div class="col-lg-6 p1">
+            <div class="success_img">
+                <img src="~/occupy/img/sub_project/nettoyage.jpg" style="height:500px; width:690px" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6 p0">
+            <div class="mission_text">
+                <h4>Nettoyage</h4>
+                <ul class="list">
+                    <li><a href="#">Domicile</a></li>
+                    <li><a href="#">Bureau</a></li>
+                    <li><a href="#">Entreprise</a></li>
+                    <li><a href="#">Autre</a></li>
+                  
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row m0 right_dir">
+        <div class="col-lg-6 p1">
+            <div class="success_img">
+                <img src="~/occupy/img/sub_project/repassage1.jpg" style="height:500px; width:690px" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6 p0">
+            <div class="mission_text">
+                <h4>Linge et Repassage</h4>
+                <ul class="list">
+                    <li><a href="#">Domicile</a></li>
+                    <li><a href="#">distance</a></li>
+                    <li><a href="#">Industrielle</a></li>
+                    <li><a href="#">Autre</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row m0 right_dir">
+        <div class="col-lg-6 p1">
+            <div class="success_img">
+                <img src="~/occupy/img/project/menage.jpg" style="height:500px; width:690px" alt="">
+            </div>
+        </div>
+        <div class="col-lg-6 p0">
+            <div class="mission_text">
+                <h4>Cuisine</h4>
+                <ul class="list">
+                    <li><a href="#">Repas a domicile</a></li>
+                    <li><a href="#">Regime</a></li>
+                    <li><a href="#">Cantine scolaire</a></li>
+                    <li><a href="#">Resto d'entreprise</a></li>
+                    <li><a href="#">Traiteur</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
